@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Total Votes</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+
+    <link rel="stylesheet"
+          href="bower_components/chartist/dist/chartist.min.css">
+  </head>
+  <body height='100%'>
+    <!-- Site content goes here !-->
+    <h2>Total Vote Tracker</h2>
+    <div class="ct-chart ct-golden-section gr" id="chart1"></div>
+    
+
+    <script src="bower_components/chartist/dist/chartist.min.js"></script>
+    <script src="bower_components/chartist/dist/chartist-plugin-pointlabels.js"></script>
+
+    <script>
+        // Initialize a Line chart in the container with the ID chart1
+        new Chartist.Line('#chart1', {
+          labels: ["28/08","29/08","30/08","31/08","01/09", "02/09", "03/09", "04/09", "05/09", "06/09"],
+          series: [[98973, 98984, 99062, 99110, 99115, 99062, 99158, 99220, 99307, 99321]],
+
+        }, {showArea: true, plugins: [
+            Chartist.plugins.ctPointLabels({
+      textAnchor: 'middle',
+      labelOffset: {
+    x: -10,
+    y: -10
+  },
+      labelClass: 'ct-label2',
+    })
+  ] } );
+      
+        
+      </script>  
+</body>
+</html>
